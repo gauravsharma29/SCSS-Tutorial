@@ -1,0 +1,25 @@
+// to use variables defined in util folder
+// here util is a namespace to avoid same $font variable if any in other folder
+// or to avoid using namespace just - @use "../util" as *; --> $font without any namespace prefix
+@use "../util" as util;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: util.$font;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: grid;
+  justify-content: center;
+}
